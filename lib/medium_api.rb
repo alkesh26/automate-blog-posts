@@ -12,18 +12,12 @@ class MediumApi < Base
   end
 
   def post
-    puts "Started posting on Medium\n\n"
-    begin
+    post_on_platform("Medium") do
       get_blog_page
       process_blog_main_content
       process_blog_image_tags
       publish_on_medium
-    rescue => e
-      puts "error message => #{e.message}"
-      puts "Please check Medium post or the above error message\n\n"
-      return
     end
-    puts "Successfully posted on Medium\n\n"
   end
 
   private

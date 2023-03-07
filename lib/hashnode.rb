@@ -23,18 +23,12 @@ class HashNode < Base
   end
 
   def post
-    puts "Started posting on HashNode\n\n"
-    begin
+    post_on_platform("HashNode") do
       get_blog_page
       process_blog_main_content
       process_blog_image_tags
       publish_on_hashnode
-    rescue => e
-      puts "error message => #{e.message}"
-      puts "Please check HashNode post or the above error message\n\n"
-      return
     end
-    puts "Successfully posted on HashNode\n\n"
   end
 
   private

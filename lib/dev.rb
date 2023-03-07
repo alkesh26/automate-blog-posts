@@ -12,18 +12,12 @@ class Dev < Base
   end
 
   def post
-    puts "Started posting on dev.to\n\n"
-    begin
+    post_on_platform("dev.to") do
       get_blog_page
       process_blog_main_content
       process_blog_image_tags
       publish_on_dev
-    rescue => e
-      puts "error message => #{e.message}"
-      puts "Please check dev.to post or the above error message\n\n"
-      return
     end
-    puts "Successfully posted on dev.to\n\n"
   end
 
   private
