@@ -25,7 +25,7 @@ class Base
   def replace_blog_image_source(image_contents)
     image_srcs = image_contents.map{ |m| $`.size }
     image_srcs.each do
-      content.gsub!("./../", "BLOG_BASE_URL")
+      content.gsub!("./../", BLOG_BASE_URL)
     end
   end
 end
