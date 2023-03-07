@@ -43,6 +43,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 gem "medium", git: "https://github.com/benpickles/medium"
+gem "graphql-client"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

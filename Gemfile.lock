@@ -94,6 +94,10 @@ GEM
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    graphql (2.0.17)
+    graphql-client (0.18.0)
+      activesupport (>= 3.0)
+      graphql
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -214,6 +218,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  graphql-client
   importmap-rails
   jbuilder
   medium!
