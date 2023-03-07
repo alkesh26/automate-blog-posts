@@ -29,7 +29,7 @@ class Dev < Base
   private
 
   def process_blog_main_content
-    start_index = result.index("### Problem statement")
+    start_index = result.index("## Problem statement")
     end_index = result.index("```\n\"")
 
     blog_body = result[start_index..(end_index + 3)]
