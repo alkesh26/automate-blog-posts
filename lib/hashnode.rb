@@ -45,8 +45,8 @@ class HashNode < Base
   end
 
   CreatePublicationStoryMutation = GraphQL.parse <<-'GRAPHQL'
-    mutation($publicationId: String!, $title: String!, $tags: [TagsInput]!, $contentMarkdown: String!) {
-      createPublicationStory(publicationId: $publicationId, input: { title: $title, tags: $tags, contentMarkdown: $contentMarkdown, isPartOfPublication: {publicationId: $publicationId}}) {
+    mutation($publicationId: String!, $title: String!, $isRepublished: isRepublished, $tags: [TagsInput]!, $contentMarkdown: String!) {
+      createPublicationStory(publicationId: $publicationId, input: { title: $title, tags: $tags, isRepublished: $isRepublished, contentMarkdown: $contentMarkdown, isPartOfPublication: {publicationId: $publicationId}}) {
         code
         message
         success
@@ -60,7 +60,10 @@ class HashNode < Base
         publicationId: publicationId,
         title: title,
         tags: get_tags,
-        contentMarkdown: content
+        contentMarkdown: content,
+        isRepublished: {
+          originalArticleURL: url
+        }
       }
     )
 
