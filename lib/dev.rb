@@ -50,9 +50,7 @@ class Dev < Base
     request = Net::HTTP::Post.new(uri.path, request_header)
     request.body = request_params.to_json
 
-    response = http.request(request)
-
-    puts response.body
+    http.request(request)
   end
 
   def request_header

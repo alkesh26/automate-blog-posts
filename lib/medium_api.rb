@@ -34,7 +34,7 @@ class MediumApi < Base
   end
 
   def publish_on_medium
-    response = medium_client.create_post(
+    medium_client.create_post(
       canonicalUrl: url,
       content: content,
       contentFormat: "html",
@@ -42,7 +42,5 @@ class MediumApi < Base
       title: title,
       tags: tags
     )
-
-    puts response["data"]["id"]
   end
 end
